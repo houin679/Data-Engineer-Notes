@@ -67,3 +67,34 @@ The workflow is built upon three main pillars:
     *   **Power BI:** The final reporting and visualization layer.
 
 
+
+
+The evolution from traditional storage to modern analytics has led to three distinct architectures: the Data Warehouse, the Data Lake, and the Data Lakehouse. Each serves a specific purpose in the data engineering workflow based on structure, cost, and performance.
+
+### **1. Data Warehouse (OLAP)**
+A **Data Warehouse**, also known as an **OLAP (Online Analytical Processing)** database, is a centralized repository designed specifically for high-performance reporting and analytics. 
+
+*   **Optimized for Reads:** Unlike source systems (OLTP) meant for writing data, warehouses are engineered to handle heavy queries across large datasets efficiently.
+*   **Structured Data Only:** It is built to house strictly **structured data** in rows and columns.
+*   **Schema-on-Write:** You must define the schema (table structure) **prior** to storing any data.
+*   **Dimensional Modeling:** Data is typically organized into **Facts** (numeric metrics) and **Dimensions** (descriptive context) using Star or Snowflake schemas to simplify querying for business analysts.
+*   **Relevant Examples:** Popular cloud-based warehouses include **Snowflake**, **Azure Synapse Analytics**, and **AWS Redshift**.
+
+### **2. Data Lake**
+As data grew exponentially in various formats, the **Data Lake** emerged as a highly flexible and inexpensive storage solution.
+
+*   **Handles All Formats:** It can store **unstructured, semi-structured (JSON, CSV), and structured data** in its raw form.
+*   **Cost-Effectiveness:** Data Lakes are significantly **cheaper and more affordable** than traditional warehouses, allowing businesses to store massive volumes of data for long periods without high overhead.
+*   **Schema-on-Read:** Unlike a warehouse, the schema is defined **after** the data is stored, usually when it is ready to be processed or analyzed.
+*   **Relevant Examples:** Key examples include **AWS S3** (Simple Storage Service), **Azure Data Lake Storage Gen2 (ADLS Gen2)**, and **Google Cloud Storage**.
+
+### **3. Data Lakehouse**
+The **Data Lakehouse** is a modern fusion that combines the inexpensive storage of a Data Lake with the high-performance management features of a Data Warehouse.
+
+*   **The "Best of Both Worlds":** It allows organizations to build **dimensional data models** directly on top of cheap storage (like S3 or ADLS Gen2), eliminating the need to move data between a lake and a separate warehouse.
+*   **Metadata Layer:** It uses an abstraction or **metadata layer** that provides a tabular view of the data, allowing users to query raw files using standard SQL.
+*   **Delta Format & ACID Transactions:** By using file formats like **Delta**, lakehouses gain "superpowers" such as **ACID transactions** (atomicity, consistency, isolation, durability) and **time travel** (versioning), which were previously only available in traditional databases.
+*   **Medallion Architecture:** Data typically flows through a lakehouse in three stages: **Bronze** (raw), **Silver** (cleaned), and **Gold** (business-ready facts and dimensions).
+*   **Relevant Example:** **Azure Databricks** is a primary platform used to manage and build Lakehouse architectures.
+
+
