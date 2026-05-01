@@ -1,4 +1,3 @@
-These in-depth notes and pointers are synthesized from the data engineering masterclass, covering everything from basic definitions to advanced cloud architectures.
 
 ### **1. Definition and Core Philosophy**
 *   **Data Engineering** is the journey of taking raw, messy data from various sources, refining it through transformations, and delivering it in structured **data models** for stakeholders,.
