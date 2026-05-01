@@ -67,4 +67,4 @@ The workflow is built upon three main pillars:
     *   **Synapse Analytics:** The cloud data warehousing solution.
     *   **Power BI:** The final reporting and visualization layer.
 
-Would you like me to create a set of flashcards to help you memorize these key data engineering concepts and terminologies?
+
